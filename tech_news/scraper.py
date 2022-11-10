@@ -9,14 +9,12 @@ def fetch(url):
     for _ in range(3):
         try:
             response = requests.get(
-                url, headers={"User-Agent": "Fake user-agent"}, timeou=3
+                url, headers={"User-Agent": "Fake user-agent"}, timeout=3
             )
-            responseStatusCode = response.status_code
-            responseText = response.text
             time.sleep(1)
-            if responseStatusCode != 200:
+            if response.status_code != 200:
                 return None
-            return responseText
+            return response.text
         except requests.ReadTimeout:
             return None
 
