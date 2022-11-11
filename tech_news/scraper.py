@@ -52,4 +52,4 @@ def scrape_noticia(html_content):
 
 # Requisito 5
 def get_tech_news(amount):
-    selector = Selector(amount)
+    """Seu código deve vir aqui"""
